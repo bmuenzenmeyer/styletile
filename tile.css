@@ -1,0 +1,152 @@
+/**************
+STYLE TILE BASE 
+**************/
+/* line 10, tile.scss */
+body {
+  margin: 0em auto;
+  max-width: 900px;
+  overflow: hidden;
+  font-size: 14px;
+  font-family: Arial, sans-serif;
+}
+
+/* line 18, tile.scss */
+ul {
+  text-align: center;
+  min-height: 40px;
+  -webkit-padding-start: 0;
+}
+/* line 22, tile.scss */
+ul li {
+  list-style: none;
+  display: inline-block;
+  border: 1px solid lightgrey;
+}
+
+/* line 28, tile.scss */
+small {
+  display: block;
+  color: lightgrey;
+  font-size: .7rem;
+  font-weight: bold;
+}
+
+/* line 34, tile.scss */
+div.tile {
+  border: 1px solid lightgrey;
+}
+/* line 37, tile.scss */
+div.tile header .stripe {
+  margin-top: 20px;
+  height: 1.5em;
+  background: #45484d;
+  /* Old browsers */
+  /* IE9 SVG, needs conditional override of 'filter' to 'none' */
+  background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzQ1NDg0ZCIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMwMDAwMDAiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+  background: -moz-linear-gradient(top, #45484d 0%, black 100%);
+  /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #45484d), color-stop(100%, black));
+  /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, #45484d 0%, black 100%);
+  /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, #45484d 0%, black 100%);
+  /* Opera 11.10+ */
+  background: -ms-linear-gradient(top, #45484d 0%, black 100%);
+  /* IE10+ */
+  background: linear-gradient(top, #45484d 0%, #000000 100%);
+  /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#45484d', endColorstr='#000000',GradientType=0 );
+  /* IE6-8 */
+  color: white;
+  line-height: 1.5em;
+  padding-left: 275px;
+  font-size: 2em;
+}
+/* line 55, tile.scss */
+div.tile header .logo {
+  float: left;
+  width: 225px;
+  height: 125px;
+  border: 1px solid lightgrey;
+  position: relative;
+  top: -50px;
+  background: white;
+  left: 40px;
+  text-align: center;
+  -webkit-box-shadow: 0px 4px 5px rgba(50, 50, 50, 0.55);
+  -moz-box-shadow: 0px 4px 5px rgba(50, 50, 50, 0.55);
+  box-shadow: 0px 4px 5px rgba(50, 50, 50, 0.55);
+}
+/* line 66, tile.scss */
+div.tile header .logo img {
+  display: inline-block;
+  margin: 13px auto;
+}
+/* line 71, tile.scss */
+div.tile header .meta {
+  position: relative;
+  left: 3.5em;
+}
+/* line 76, tile.scss */
+div.tile section {
+  margin: 10px 40px;
+}
+/* line 78, tile.scss */
+div.tile section .left {
+  clear: left;
+  width: 49%;
+  float: left;
+}
+/* line 83, tile.scss */
+div.tile section .left .colors ul li {
+  height: 60px;
+  width: 18%;
+  line-height: 40px;
+  -webkit-box-shadow: 0px 2px 3px rgba(50, 50, 50, 0.55);
+  -moz-box-shadow: 0px 2px 3px rgba(50, 50, 50, 0.55);
+  box-shadow: 0px 2px 3px rgba(50, 50, 50, 0.55);
+}
+/* line 92, tile.scss */
+div.tile section .textures ul {
+  width: 100%;
+}
+/* line 94, tile.scss */
+div.tile section .textures ul li {
+  width: 31%;
+  height: 100px;
+  -webkit-box-shadow: 0px 2px 3px rgba(50, 50, 50, 0.55);
+  -moz-box-shadow: 0px 2px 3px rgba(50, 50, 50, 0.55);
+  box-shadow: 0px 2px 3px rgba(50, 50, 50, 0.55);
+}
+/* line 101, tile.scss */
+div.tile section input[type="button"] {
+  width: 48%;
+}
+/* line 104, tile.scss */
+div.tile section .auth {
+  margin-top: 3.5em;
+}
+/* line 107, tile.scss */
+div.tile section .right {
+  width: 49%;
+  float: right;
+}
+/* line 110, tile.scss */
+div.tile section .right h1 {
+  -webkit-margin-before: 0;
+}
+/* line 113, tile.scss */
+div.tile section .right .adjectives {
+  margin-top: .5em;
+}
+/* line 116, tile.scss */
+div.tile section .right .adjectives ul li {
+  width: 31%;
+  border: none;
+  font-size: 2em;
+  text-align: left;
+}
+/* line 125, tile.scss */
+div.tile section .clear {
+  clear: both;
+}
