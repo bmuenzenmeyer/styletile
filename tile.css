@@ -1,29 +1,326 @@
+/*------------------------------------*\
+    $VARIABLES
+\*------------------------------------*/
+/*------------------------------------*\
+    $MIXINS
+\*------------------------------------*/
+/* CSS Transition
+	Usage: @include transition(width,0.3s,ease-out);
+ */
+/*------------------------------------*\
+    $RESET
+\*------------------------------------*/
+/* Border-Box http:/paulirish.com/2012/box-sizing-border-box-ftw/ */
+@import url(http://fonts.googleapis.com/css?family=PT+Sans+Narrow);
+* {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+html, body, div, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, ol, ul, li, form, legend, label, table, header, footer, nav, section, figure {
+  margin: 0;
+  padding: 0;
+}
+
+header, footer, nav, section, article, hgroup, figure {
+  display: block;
+}
+
+/*------------------------------------*\
+    $GLOBAL ELEMENTS
+\*------------------------------------*/
+/*------------------------------------*\
+    $GLOBAL CLASSES
+\*------------------------------------*/
+/* Clearfix */
+.cf {
+  *zoom: 1;
+}
+
+.cf:before, .cf:after {
+  content: " ";
+  /* 1 */
+  display: table;
+  /* 2 */
+}
+
+.cf:after {
+  clear: both;
+}
+
+/* Completely remove from the flow and screen readers. */
+.is-hidden {
+  display: none !important;
+  visibility: hidden !important;
+}
+
+/* Completely remove from the flow but leave available to screen readers. */
+.is-vishidden {
+  position: absolute !important;
+  overflow: hidden;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  border: 0;
+  clip: rect(1px, 1px, 1px, 1px);
+}
+
+/* Floats */
+.right {
+  float: right;
+  padding: 0 0 1rem 1rem;
+}
+
+.right-search {
+  float: right;
+  padding: 0 0 1rem 0;
+}
+
+.left {
+  float: left;
+  padding: 0 1rem 1rem 0;
+}
+
+/* Text-Align */
+.align-right {
+  text-align: right;
+}
+
+.align-center {
+  text-align: center;
+}
+
+.align-left {
+  text-align: left;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 100%;
+}
+
+body {
+  background: #fff;
+  font: 18px/150% "PT Sans Narrow", Arial, Tahoma, sans-serif;
+  -webkit-text-size-adjust: 100%;
+  color: #4c4c4c;
+}
+@media all and (min-width: 45em) {
+  body {
+    width: 800px;
+    margin: 0 auto;
+  }
+}
+
+/* Links */
+a {
+  color: #4c4c4c;
+}
+a:hover, a:focus {
+  color: #000;
+}
+
+nav a {
+  display: block;
+  margin: 0.5rem auto;
+}
+
+/* Headings */
+/*Further Reading: http:/csswizardry.com/2012/02/pragmatic-practical-font-sizing-in-css/ */
+h1, .alpha {
+  line-height: 1.2;
+  font-size: 4rem;
+  font-weight: 300;
+  margin: 1rem auto;
+}
+
+h2, .beta {
+  line-height: 1.2;
+  font-size: 3rem;
+  font-weight: 300;
+  margin: 1rem auto;
+}
+
+h3, .gamma {
+  line-height: 1.2;
+  font-size: 2.25rem;
+  font-weight: 300;
+  margin: 1rem auto;
+}
+
+h4, .delta {
+  font-size: 1.75rem;
+  font-weight: 300;
+  margin: 1rem auto;
+}
+
+h5, .epsilon {
+  font-size: 1.25rem;
+  font-weight: 300;
+  margin: 1rem auto;
+}
+
+h6, .zeta {
+  font-size: 1rem;
+  font-weight: 300;
+  margin: 1rem auto;
+}
+
+p {
+  line-height: 1.5em;
+}
+
+p + p {
+  margin-top: .5rem;
+}
+
+blockquote {
+  background-color: #f2f2f2;
+  margin: 2rem auto;
+}
+
+ol, ul {
+  margin: 0;
+  padding: 0 0 0 2rem;
+}
+
+/* Definition Lists */
+dl {
+  overflow: hidden;
+  margin: 0 0 1rem;
+}
+
+dt {
+  font-weight: bold;
+}
+
+dd {
+  margin-left: 0;
+}
+
+/*------------------------------------*\
+    $MEDIA ELEMENTS
+\*------------------------------------*/
+/* Flexible Media */
+img, video, object {
+  max-width: 100%;
+  height: auto;
+}
+
+iframe {
+  margin-bottom: 1rem;
+}
+
+figure {
+  margin-bottom: 1rem;
+}
+figure img {
+  margin-bottom: 0.25rem;
+}
+
+figcaption {
+  font-style: italic;
+}
+
+/*------------------------------------*\
+    $Table
+\*------------------------------------*/
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  border: 1px solid #4c4c4c;
+  width: 100%;
+}
+
+th {
+  text-align: left;
+  border: 1px solid #666;
+  padding: 0.2em;
+}
+
+td {
+  border: 1px solid #666;
+  padding: 0.2em;
+}
+
+.animate-fade {
+  -webkit-transition: opacity 0.3s ease-out;
+  -moz-transition: opacity 0.3s ease-out;
+  -ms-transition: opacity 0.3s ease-out;
+  -o-transition: opacity 0.3s ease-out;
+  transition: opacity 0.3s ease-out;
+}
+.animate-fade:hover {
+  opacity: 0;
+}
+
+.animate-move > .demo-shape {
+  -webkit-transition: all 0.8s ease-in-out;
+  -moz-transition: all 0.8s ease-in-out;
+  -ms-transition: all 0.8s ease-in-out;
+  -o-transition: all 0.8s ease-in-out;
+  transition: all 0.8s ease-in-out;
+}
+
+.bg-green {
+  background-color: #B2F33C;
+}
+
+.bg-green-light {
+  background-color: #CEF586;
+}
+
+.bg-green-dark {
+  background-color: #55731D;
+}
+
+.bg-gray {
+  background-color: #666;
+}
+
+.bg-gray-dark {
+  background-color: #4c4c4c;
+}
+
+.bg-gray-light {
+  background-color: #b2b2b2;
+}
+
+.bg-white-alt {
+  background-color: #f2f2f2;
+}
+
+.bg-purple {
+  background-color: #C93CF3;
+}
+
+.bg-purple-dark {
+  background-color: #8208A6;
+}
+
 /**************
 STYLE TILE BASE 
 **************/
-/* line 10, tile.scss */
 body {
   margin: 0em auto;
-  max-width: 900px;
-  overflow: hidden;
-  font-size: 14px;
-  font-family: Arial, sans-serif;
+  width: 100%;
 }
 
-/* line 18, tile.scss */
-ul {
+.colors ul {
   text-align: center;
   min-height: 40px;
   -webkit-padding-start: 0;
 }
-/* line 22, tile.scss */
-ul li {
+.colors ul li {
   list-style: none;
   display: inline-block;
   border: 1px solid lightgrey;
 }
 
-/* line 28, tile.scss */
 small {
   display: block;
   color: lightgrey;
@@ -31,122 +328,114 @@ small {
   font-weight: bold;
 }
 
-/* line 34, tile.scss */
+section {
+  margin: 10px auto;
+}
+
 div.tile {
-  border: 1px solid lightgrey;
+  padding: 1em 2em;
 }
-/* line 37, tile.scss */
-div.tile header .stripe {
-  margin-top: 20px;
-  height: 1.5em;
-  background: #45484d;
-  /* Old browsers */
-  /* IE9 SVG, needs conditional override of 'filter' to 'none' */
-  background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzQ1NDg0ZCIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMwMDAwMDAiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
-  background: -moz-linear-gradient(top, #45484d 0%, black 100%);
-  /* FF3.6+ */
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #45484d), color-stop(100%, black));
-  /* Chrome,Safari4+ */
-  background: -webkit-linear-gradient(top, #45484d 0%, black 100%);
-  /* Chrome10+,Safari5.1+ */
-  background: -o-linear-gradient(top, #45484d 0%, black 100%);
-  /* Opera 11.10+ */
-  background: -ms-linear-gradient(top, #45484d 0%, black 100%);
-  /* IE10+ */
-  background: linear-gradient(top, #45484d 0%, #000000 100%);
-  /* W3C */
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#45484d', endColorstr='#000000',GradientType=0 );
-  /* IE6-8 */
-  color: white;
-  line-height: 1.5em;
-  padding-left: 275px;
-  font-size: 2em;
-}
-/* line 55, tile.scss */
-div.tile header .logo {
-  float: left;
-  width: 225px;
-  height: 125px;
-  border: 1px solid lightgrey;
-  position: relative;
-  top: -50px;
-  background: white;
-  left: 40px;
-  text-align: center;
-  -webkit-box-shadow: 0px 4px 5px rgba(50, 50, 50, 0.55);
-  -moz-box-shadow: 0px 4px 5px rgba(50, 50, 50, 0.55);
-  box-shadow: 0px 4px 5px rgba(50, 50, 50, 0.55);
-}
-/* line 66, tile.scss */
-div.tile header .logo img {
+div.tile header h1 {
   display: inline-block;
-  margin: 13px auto;
+  margin-top: 0;
 }
-/* line 71, tile.scss */
-div.tile header .meta {
-  position: relative;
-  left: 3.5em;
+div.tile header .logo {
+  width: 45px;
 }
-/* line 76, tile.scss */
-div.tile section {
-  margin: 10px 40px;
+
+ul.posts {
+  clear: both;
+  margin: 0;
+  padding: 0;
+  margin-top: 1em;
+  list-style: none;
 }
-/* line 78, tile.scss */
-div.tile section .left {
+ul.posts li {
+  background-color: #f2f2f2;
+  outline: 1px solid #b2b2b2;
+  padding: 3px;
+  margin-bottom: 5px;
+}
+ul.posts li a {
+  text-decoration: none;
+}
+
+.block img {
+  margin: 0 auto;
+  display: block;
+}
+
+.block div {
+  background-color: #B2F33C;
+  padding: .5em;
+}
+.block h4 {
+  font-weight: bold;
+}
+
+.meta {
+  float: right;
+  margin: 0 .5em 0 .5em;
+}
+
+.left {
+  width: 100%;
   clear: left;
-  width: 49%;
   float: left;
+  padding: 0;
 }
-/* line 83, tile.scss */
-div.tile section .left .colors ul li {
+.left .colors ul li {
   height: 60px;
-  width: 18%;
+  width: 60px;
   line-height: 40px;
-  -webkit-box-shadow: 0px 2px 3px rgba(50, 50, 50, 0.55);
-  -moz-box-shadow: 0px 2px 3px rgba(50, 50, 50, 0.55);
-  box-shadow: 0px 2px 3px rgba(50, 50, 50, 0.55);
 }
-/* line 92, tile.scss */
-div.tile section .textures ul {
+
+.textures ul {
   width: 100%;
 }
-/* line 94, tile.scss */
-div.tile section .textures ul li {
+.textures ul li {
   width: 31%;
   height: 100px;
   -webkit-box-shadow: 0px 2px 3px rgba(50, 50, 50, 0.55);
   -moz-box-shadow: 0px 2px 3px rgba(50, 50, 50, 0.55);
   box-shadow: 0px 2px 3px rgba(50, 50, 50, 0.55);
 }
-/* line 101, tile.scss */
-div.tile section input[type="button"] {
+
+input[type="button"] {
   width: 48%;
 }
-/* line 104, tile.scss */
-div.tile section .auth {
+
+.auth {
   margin-top: 3.5em;
 }
-/* line 107, tile.scss */
-div.tile section .right {
-  width: 49%;
-  float: right;
+
+.right {
+  width: 100%;
+  padding: 0;
 }
-/* line 110, tile.scss */
-div.tile section .right h1 {
+.right h1 {
   -webkit-margin-before: 0;
 }
-/* line 113, tile.scss */
-div.tile section .right .adjectives {
-  margin-top: .5em;
-}
-/* line 116, tile.scss */
-div.tile section .right .adjectives ul li {
-  width: 31%;
-  border: none;
-  font-size: 2em;
-  text-align: left;
-}
-/* line 125, tile.scss */
-div.tile section .clear {
+
+.clear {
   clear: both;
+}
+
+.bar {
+  font-size: 2em;
+}
+
+@media screen and (min-width: 50em) {
+  .left, .right {
+    width: 49%;
+  }
+
+  .posts {
+    width: 49%;
+    float: left;
+  }
+
+  .right {
+    margin-top: -170px;
+  }
 }

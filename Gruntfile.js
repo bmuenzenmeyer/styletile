@@ -17,10 +17,10 @@ module.exports = function(grunt) {
 				options: {
 					style: 'expanded',
 					precision: 8,
-      		sourcemap: 'none'
+					sourcemap: 'none'
 				},
 				files: {
-					'.tile.css': 'tile.scss'
+					'tile.css': 'tile.scss'
 				}
 			}
 		},
@@ -28,7 +28,7 @@ module.exports = function(grunt) {
 			app:{
 				options: {
 					port: 9002,
-					base: './public',
+					base: './',
 					hostname: 'localhost',
 					open: true,
 					livereload: 35729
