@@ -1,0 +1,20 @@
+{
+  "name": "styletile",
+  "description": "The styletile for brianmuenzenmeyer.com",
+  "version": "0.0.1",
+  "devDependencies": {
+    "grunt": "~0.4.0",
+    "grunt-contrib-watch": "~0.6.1",
+    "grunt-contrib-sass": "~0.8.1",
+    "grunt-contrib-connect": "^0.8.0",
+    "matchdep": "~0.3.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/bmuenzenmeyer/styletile.git"
+  },
+  "author": {
+    "name": "Brian Muenzenmeyer"
+  },
+  "license": "MIT"
+}
