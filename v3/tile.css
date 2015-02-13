@@ -1,0 +1,617 @@
+/*------------------------------------*\
+    $VARIABLES
+\*------------------------------------*/
+/*------------------------------------*\
+    $MIXINS
+\*------------------------------------*/
+/* CSS Transition
+	Usage: @include transition(width,0.3s,ease-out);
+ */
+/*------------------------------------*\
+    $RESET
+\*------------------------------------*/
+/* Border-Box http:/paulirish.com/2012/box-sizing-border-box-ftw/ */
+@import url(http://fonts.googleapis.com/css?family=PT+Sans+Narrow);
+* {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+html, body, div, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, ol, ul, li, form, legend, label, table, header, footer, nav, section, figure {
+  margin: 0;
+  padding: 0;
+}
+
+header, footer, nav, section, article, hgroup, figure {
+  display: block;
+}
+
+/*------------------------------------*\
+    $GLOBAL ELEMENTS
+\*------------------------------------*/
+/*------------------------------------*\
+    $GLOBAL CLASSES
+\*------------------------------------*/
+/* Clearfix */
+.cf {
+  *zoom: 1;
+}
+
+.cf:before, .cf:after {
+  content: " ";
+  /* 1 */
+  display: table;
+  /* 2 */
+}
+
+.cf:after {
+  clear: both;
+}
+
+/* Completely remove from the flow and screen readers. */
+.is-hidden {
+  display: none !important;
+  visibility: hidden !important;
+}
+
+/* Completely remove from the flow but leave available to screen readers. */
+.is-vishidden {
+  position: absolute !important;
+  overflow: hidden;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  border: 0;
+  clip: rect(1px, 1px, 1px, 1px);
+}
+
+/* Floats */
+.right {
+  float: right;
+  padding: 0 0 1rem 1rem;
+}
+
+.right-search {
+  float: right;
+  padding: 0 0 1rem 0;
+}
+
+.left {
+  float: left;
+  padding: 0 1rem 1rem 0;
+}
+
+/* Text-Align */
+.align-right {
+  text-align: right;
+}
+
+.align-center {
+  text-align: center;
+}
+
+.align-left {
+  text-align: left;
+}
+
+.dotted {
+  background-image: -webkit-repeating-radial-gradient(center center, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) 1px, transparent 1px, transparent 100%);
+  background-image: -moz-repeating-radial-gradient(center center, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) 1px, transparent 1px, transparent 100%);
+  background-image: -ms-repeating-radial-gradient(center center, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) 1px, transparent 1px, transparent 100%);
+  background-image: repeating-radial-gradient(center center, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) 1px, transparent 1px, transparent 100%);
+  -webkit-background-size: 3px 3px;
+  -moz-background-size: 3px 3px;
+  background-size: 3px 3px;
+}
+
+.striped {
+  background-image: -webkit-repeating-linear-gradient(135deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3) 1px, transparent 2px, transparent 2px, rgba(0, 0, 0, 0.3) 3px);
+  background-image: -moz-repeating-linear-gradient(135deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3) 1px, transparent 2px, transparent 2px, rgba(0, 0, 0, 0.3) 3px);
+  background-image: -o-repeating-linear-gradient(135deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3) 1px, transparent 2px, transparent 2px, rgba(0, 0, 0, 0.3) 3px);
+  background-image: repeating-linear-gradient(135deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3) 1px, transparent 2px, transparent 2px, rgba(0, 0, 0, 0.3) 3px);
+  -webkit-background-size: 4px 4px;
+  -moz-background-size: 4px 4px;
+  background-size: 4px 4px;
+}
+
+.grid {
+  background-image: -webkit-repeating-linear-gradient(135deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3) 1px, transparent 2px, transparent 2px, rgba(0, 0, 0, 0.3) 3px);
+  background-image: -moz-repeating-linear-gradient(135deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3) 1px, transparent 2px, transparent 2px, rgba(0, 0, 0, 0.3) 3px);
+  background-image: -o-repeating-linear-gradient(135deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3) 1px, transparent 2px, transparent 2px, rgba(0, 0, 0, 0.3) 3px);
+  background-image: repeating-linear-gradient(135deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3) 1px, transparent 2px, transparent 2px, rgba(0, 0, 0, 0.3) 3px);
+  -webkit-background-size: 2px 2px;
+  -moz-background-size: 2px 2px;
+  background-size: 2px 2px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 100%;
+}
+
+body {
+  background: #fff;
+  font: 18px/150% "PT Sans Narrow", Arial, Tahoma, sans-serif;
+  -webkit-text-size-adjust: 100%;
+  color: #4c4c4c;
+  margin: 0 .5em;
+}
+@media all and (min-width: 45em) {
+  body {
+    width: 800px;
+    margin: 0 auto;
+  }
+}
+
+/* Links */
+a {
+  color: #4c4c4c;
+}
+a:hover, a:focus {
+  color: #000;
+}
+
+nav a {
+  display: block;
+  margin: 0.5rem auto;
+}
+
+/* Headings */
+/*Further Reading: http:/csswizardry.com/2012/02/pragmatic-practical-font-sizing-in-css/ */
+h1, .alpha {
+  line-height: 1.2;
+  font-size: 4rem;
+  font-weight: 300;
+  margin: 1rem auto;
+}
+
+h2, .beta {
+  line-height: 1.2;
+  font-size: 3rem;
+  font-weight: 300;
+  margin: 1rem auto;
+}
+
+h3, .gamma {
+  line-height: 1.2;
+  font-size: 2.25rem;
+  font-weight: 300;
+  margin: 1rem auto;
+}
+
+h4, .delta {
+  font-size: 1.75rem;
+  font-weight: 300;
+  margin: 1rem auto;
+}
+
+h5, .epsilon {
+  font-size: 1.25rem;
+  font-weight: 300;
+  margin: 1rem auto;
+}
+
+h6, .zeta {
+  font-size: 1rem;
+  font-weight: 300;
+  margin: 1rem auto;
+}
+
+p {
+  line-height: 1.5em;
+}
+
+p + p {
+  margin-top: .5rem;
+}
+
+blockquote {
+  background-color: #f2f2f2;
+  margin: 2rem auto;
+}
+
+ol, ul {
+  margin: 0;
+  padding: 0 0 0 2rem;
+}
+
+/* Definition Lists */
+dl {
+  overflow: hidden;
+  margin: 0 0 1rem;
+}
+
+dt {
+  font-weight: bold;
+}
+
+dd {
+  margin-left: 0;
+}
+
+/*------------------------------------*\
+    $MEDIA ELEMENTS
+\*------------------------------------*/
+/* Flexible Media */
+img, video, object {
+  max-width: 100%;
+  height: auto;
+}
+
+iframe {
+  margin-bottom: 1rem;
+}
+
+figure {
+  margin-bottom: 1rem;
+}
+figure img {
+  margin-bottom: 0.25rem;
+}
+
+figcaption {
+  font-style: italic;
+}
+
+/*------------------------------------*\
+    $Table
+\*------------------------------------*/
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  border: 1px solid #4c4c4c;
+  width: 100%;
+}
+
+th {
+  text-align: left;
+  border: 1px solid #666;
+  padding: 0.2em;
+}
+
+td {
+  border: 1px solid #666;
+  padding: 0.2em;
+}
+
+.animate-fade {
+  -webkit-transition: opacity 0.3s ease-out;
+  -moz-transition: opacity 0.3s ease-out;
+  -ms-transition: opacity 0.3s ease-out;
+  -o-transition: opacity 0.3s ease-out;
+  transition: opacity 0.3s ease-out;
+}
+.animate-fade:hover {
+  opacity: 0;
+}
+
+.animate-move > .demo-shape {
+  -webkit-transition: all 0.8s ease-in-out;
+  -moz-transition: all 0.8s ease-in-out;
+  -ms-transition: all 0.8s ease-in-out;
+  -o-transition: all 0.8s ease-in-out;
+  transition: all 0.8s ease-in-out;
+}
+
+.feature-block {
+  padding: 1rem;
+  border: 1px solid #b2b2b2;
+}
+
+/* Unordered lists */
+li.post {
+  border-left: 1em solid #B2F33C;
+  background-color: #CEF586;
+  margin-bottom: 5px;
+  height: 1.8em;
+}
+li.post a {
+  text-decoration: none;
+  display: inline-block;
+  padding: 3px;
+  float: left;
+}
+li.post span {
+  float: right;
+  color: white;
+  background-color: rgba(76, 76, 76, 0.2);
+  padding: 3px 1em;
+}
+
+ul.list {
+  clear: both;
+  margin: 0;
+  padding: 0;
+  margin-top: 1em;
+  list-style: none;
+}
+
+.bg-green {
+  background-color: #B2F33C;
+}
+
+.bg-green-light {
+  background-color: #CEF586;
+}
+
+.bg-green-dark {
+  background-color: #55731D;
+}
+
+.bg-gray {
+  background-color: #666;
+}
+
+.bg-gray-dark {
+  background-color: #4c4c4c;
+}
+
+.bg-gray-light {
+  background-color: #b2b2b2;
+}
+
+.bg-white-alt {
+  background-color: #f2f2f2;
+}
+
+.bg-purple {
+  background-color: #C93CF3;
+}
+
+.bg-purple-dark {
+  background-color: #8208A6;
+}
+
+/**************
+STYLE TILE BASE 
+**************/
+html, body {
+  margin: 0em auto;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+aside {
+  height: 100%;
+  min-height: 100%;
+  border-right: 1px solid grey;
+}
+aside p {
+  padding: 10px;
+}
+aside figure {
+  width: 45%;
+  margin: 0 auto;
+  display: inline-block;
+  border: 1px solid grey;
+  padding: 0;
+}
+aside figure figcaption {
+  background: grey;
+  color: white;
+  font-size: .8em;
+  text-align: left;
+  padding-left: 5px;
+}
+aside figure img {
+  margin-bottom: 0;
+}
+
+.colors ul {
+  text-align: center;
+  min-height: 40px;
+  -webkit-padding-start: 0;
+}
+.colors ul li {
+  list-style: none;
+  display: inline-block;
+  border: 1px solid lightgrey;
+}
+
+small {
+  display: block;
+  color: lightgrey;
+  font-size: .7rem;
+  font-weight: bold;
+}
+
+section {
+  margin: 10px auto;
+}
+
+div.tile {
+  height: 100%;
+}
+div.tile h1 {
+  text-align: center;
+  font: bold 48px 'PT Sans Narrow',sans-serif;
+  text-shadow: 1px 1px 0 #fff, 2px 2px 0 #999;
+  color: black;
+}
+
+ul.list {
+  clear: both;
+  margin: 0;
+  padding: 0;
+  margin-top: 1em;
+  list-style: none;
+}
+ul.list li {
+  border-left: 1em solid #B2F33C;
+  background-color: #CEF586;
+  margin-bottom: 5px;
+  height: 1.8em;
+}
+ul.list li:hover {
+  border-left: 1em solid #55731D;
+}
+ul.list li a {
+  text-decoration: none;
+  display: inline-block;
+  padding: 3px;
+  float: left;
+}
+ul.list li span {
+  float: right;
+  color: white;
+  background-color: rgba(76, 76, 76, 0.2);
+  padding: 3px 1em;
+}
+
+.center {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.meta {
+  float: right;
+  margin: 0 .5em 0 .5em;
+}
+
+.colors ul li {
+  height: 90px;
+  width: 90px;
+  margin: .5em auto;
+  line-height: 40px;
+}
+
+.left {
+  width: 30%;
+  float: left;
+  padding: 0;
+}
+.left .textures ul {
+  width: 100%;
+}
+.left .textures ul li {
+  width: 31%;
+  height: 100px;
+  -webkit-box-shadow: 0px 2px 3px rgba(50, 50, 50, 0.55);
+  -moz-box-shadow: 0px 2px 3px rgba(50, 50, 50, 0.55);
+  box-shadow: 0px 2px 3px rgba(50, 50, 50, 0.55);
+}
+.left input[type="button"] {
+  width: 48%;
+}
+.left .auth {
+  margin-top: 3.5em;
+}
+
+.right {
+  width: 600px;
+  float: left;
+  padding-left: 3em;
+}
+.right h1 {
+  color: #B2F33C;
+  border: 1px solid grey;
+  position: relative;
+}
+.right h3, .right h4 {
+  margin: 1em auto .25em;
+  color: #B2F33C;
+  border-left: 1rem solid rgba(0, 0, 0, 0.1);
+  padding: .25em;
+}
+
+.clear {
+  clear: both;
+}
+
+#owl {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+}
+
+.corner {
+  position: absolute;
+  top: 0;
+  right: 0;
+  text-align: right;
+  width: 300px;
+}
+
+.link a, p a {
+  color: #C93CF3;
+  text-decoration: underline;
+}
+.link a:hover, p a:hover {
+  color: #8208A6;
+}
+
+.buttons {
+  width: 100%;
+  height: 2em;
+  line-height: 2em;
+  margin-top: .5em;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-content: flex-start;
+  align-items: flex-start;
+}
+.buttons a {
+  flex: 0 1 33%;
+  align-self: auto;
+  text-align: center;
+  font-size: 1em;
+  color: #fefefe;
+  text-shadow: none;
+  font-weight: normal;
+  text-decoration: none;
+  background: rgba(0, 0, 0, 0.6);
+}
+.buttons a:hover {
+  background: rgba(0, 0, 0, 0.8);
+}
+.buttons div {
+  flex: 0 1 25%;
+  align-self: auto;
+  text-align: center;
+  font-size: .75em;
+  color: #fefefe;
+  text-shadow: none;
+  font-weight: normal;
+  text-decoration: none;
+  background: rgba(0, 0, 0, 0.6);
+  margin: .15em;
+  height: 4em;
+  line-height: 4em;
+}
+
+.dotted {
+  background-image: -webkit-repeating-radial-gradient(center center, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) 1px, transparent 1px, transparent 100%);
+  background-image: -moz-repeating-radial-gradient(center center, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) 1px, transparent 1px, transparent 100%);
+  background-image: -ms-repeating-radial-gradient(center center, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) 1px, transparent 1px, transparent 100%);
+  background-image: repeating-radial-gradient(center center, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) 1px, transparent 1px, transparent 100%);
+  -webkit-background-size: 3px 3px;
+  -moz-background-size: 3px 3px;
+  background-size: 3px 3px;
+}
+
+.striped {
+  background-image: -webkit-repeating-linear-gradient(135deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3) 1px, transparent 2px, transparent 2px, rgba(0, 0, 0, 0.3) 3px);
+  background-image: -moz-repeating-linear-gradient(135deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3) 1px, transparent 2px, transparent 2px, rgba(0, 0, 0, 0.3) 3px);
+  background-image: -o-repeating-linear-gradient(135deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3) 1px, transparent 2px, transparent 2px, rgba(0, 0, 0, 0.3) 3px);
+  background-image: repeating-linear-gradient(135deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3) 1px, transparent 2px, transparent 2px, rgba(0, 0, 0, 0.3) 3px);
+  -webkit-background-size: 4px 4px;
+  -moz-background-size: 4px 4px;
+  background-size: 4px 4px;
+}
+
+.grid {
+  background-image: -webkit-repeating-linear-gradient(135deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3) 1px, transparent 2px, transparent 2px, rgba(0, 0, 0, 0.3) 3px);
+  background-image: -moz-repeating-linear-gradient(135deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3) 1px, transparent 2px, transparent 2px, rgba(0, 0, 0, 0.3) 3px);
+  background-image: -o-repeating-linear-gradient(135deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3) 1px, transparent 2px, transparent 2px, rgba(0, 0, 0, 0.3) 3px);
+  background-image: repeating-linear-gradient(135deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3) 1px, transparent 2px, transparent 2px, rgba(0, 0, 0, 0.3) 3px);
+  -webkit-background-size: 2px 2px;
+  -moz-background-size: 2px 2px;
+  background-size: 2px 2px;
+}

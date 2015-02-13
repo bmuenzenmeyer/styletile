@@ -1,5 +1,6 @@
 <html>
 <head>
+	<link href='http://fonts.googleapis.com/css?family=Passion+One' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" type="text/css" href="normalize.css">
 	<link rel="stylesheet" type="text/css" href="tile.css">
 	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
@@ -7,33 +8,26 @@
 <body>
 	<div class="tile">
 
-		<aside class="left dotted">
+		<div class="buttons">
+		  <a href="#"><i class="fa fa-twitter"></i> Twitter</a> <a href="#"><i class="fa fa-envelope"></i> Email</a> <a href="#"><i class="fa fa-github"></i> Github</a> <a href="#"><i class="fa fa-codepen"></i> Codepen</a>
+		</div>
 
-			<h1>Brian Muenzenmeyer</h1> 
+		<header>
+		  <h1 class="pat dotted">HI HI IM BRIAN
+		  </h1>
+		</header>
 
-		  <p>I spend my working days in ux/ui design and my waking nights in even more front end design and development. I live in Northeast Wisconsin with my wife, young son, 2 cats and 3 coffee makers.</p>
-		  <p>The best way to reach me is on Twitter <a href="https://twitter.com/bmuenzenmeyer">@bmuenzenmeyer</a>. I moonlight at <a href="http://crunchyowl.com">Crunchy Owl</a>, a dawning of individual design. I help people solve problems and send on-target messages. When not on the web, I am digging up the yard, wearing an afghan, trying on something grey, or day-dreaming about the ultimate home office.</p>
+		<aside class="left">
 
-		  <div class="center">
+			<p><img src="http://www.brianmuenzenmeyer.com/img/brian.jpg" class="logo" width="25%" style="float: left; margin-right: .25em;"/>I spend my working days in ux/ui design and my waking nights maintaining the <a href="https://github.com/pattern-lab/patternlab-node">node port</a> of Brad Frost and Dave Molsen’s Pattern Lab and moonlighting as <a href="http://crunchyowl.com">Crunchy Owl</a>, a small studio. I am interested in the intersection of performance and responsive design to craft better things that reach more people. I live in Northeast Wisconsin with my wife, young son, 2 cats and 3 coffee makers. When not online, I am digging up the yard, wearing an afghan, talking about something I heard on public radio, dressing in grayscale, or pretending to play the piano. The best way to reach me is on Twitter <a href="https://twitter.com/bmuenzenmeyer">@bmuenzenmeyer</a>.</p>
 
-				<figure>
-					<img src="http://www.brianmuenzenmeyer.com/img/brian.jpg" class="logo">
-					<figcaption><abbr>1.0</abbr> My face</figcaption>
-				</figure>
-				<figure>
-					<img src="http://www.brianmuenzenmeyer.com/img/owl.png" class="logo">
-					<figcaption><abbr>1.1</abbr> My <strike>familiar</strike> company</figcaption>
-				</figure>
+			<h5>Sample Mastheads for subpages</h5>
 
-			</div>
+			<div class="masthead grid">BM 		  <a href="#"><i class="fa fa-twitter"></i> Twitter</a> <a href="#"><i class="fa fa-envelope"></i> Email</a> <a href="#"><i class="fa fa-github"></i> Github</a> <a href="#"><i class="fa fa-codepen"></i> Codepen</a></div>
+			<div class="masthead test">BRIAN MUENZENMEYER 		  <a href="#"><i class="fa fa-twitter"></i> </a> <a href="#"><i class="fa fa-envelope"></i> </a> <a href="#"><i class="fa fa-github"></i> </a> <a href="#"><i class="fa fa-codepen"></i> </a></div>
+			<div class="masthead">BMZ 		  <a href="#"><i class="fa fa-twitter"></i> </a> <a href="#"><i class="fa fa-envelope"></i></a> <a href="#"><i class="fa fa-github"></i></a> <a href="#"><i class="fa fa-codepen"></i></a></div>
 
-			<div class="buttons">
-			  <a href="#"><i class="fa fa-twitter"></i> Twitter</a> <a href="#"><i class="fa fa-envelope"></i> Email</a> <a href="#"><i class="fa fa-github"></i> Github</a>
-			</div>
-
-			<br />
-			<br />
-
+			<h5>Color Pallete</h5>
 			<div class="colors">
 				<ul>
 					<li class="bg-green"></li>
@@ -49,11 +43,11 @@
 				</ul>
 			</div>
 
-			<span class="meta zeta"><strong>Style Tile</strong> <em>Version 0.2 January 2015</em></span>
+			<span class="meta zeta"><strong>Style Tile</strong> <em>Version 0.3 February 2015</em></span>
 		</aside>
 
 		<div class="right">
-
+			<h2 class="pat striped">Writing</h2>
 			<ul class="list">
 				<li>
 					<a href="/creating-a-content-inventory">Creating a Content Inventory</a> <span>POST</span>
@@ -65,13 +59,19 @@
 					<a href="/code-highlighting-demo">Code Highlighting Demo</a> <span>POST</span>
 				</li>
 				<li>
+					<a href="/a-performant-foundation">Check out this great color tool</a> <span>SHARE</span>
+				</li>				
+				<li>
 					<a href="/a-performant-foundation">A Performant Foundation</a> <span>POST</span>
 				</li>
 			</ul>
-
+			<h2 class="pat striped">Projects</h2>
 			<ul class="list">
 				<li>
 					<a href="/creating-a-content-inventory">Pattern Lab Node</a> <span>PROJECT</span>
+				</li>
+				<li class="bounded">
+					<a href="/using-patternlab-to-design-build-and-maintain-a-website">Typography Experiment</a> <span>LAB</span>
 				</li>
 				<li>
 					<a href="/using-patternlab-to-design-build-and-maintain-a-website">Typography Experiment</a> <span>LAB</span>
@@ -80,8 +80,6 @@
 			</ul>
 
 			<section>
-
-				<h1 class="striped">This is an Example Header</h1>
 
 				<div class="link">
 					<a href="#">@bmuenzenmeyer</a> | <a href="#">Post</a> | <a href="#">Date</a>
@@ -119,14 +117,6 @@
 			<section class="corner">					
 
 				<div>
-
-					<p>Crunchy Owl is a small web design and development shop. I craft effective, on-target digital experiences.</p>
-
-					<h4>Web Development</h4>
-					<p>I deliver quality code with an eye towards standards compliance and industry best practices. Responsive design principles extend from time-honored standards compliance and progressive enhancement. Sign me up for some of that! In a world of cut and paste snippets, WYSIWYG editors, and tight timelines, some of us still write code by hand, testing diligently and with little regard for sunrise.</p>
-
-					<h4>UX &amp; UI Design</h4>
-					<p>Communicate effective messages to your audience. Crafting a functional product often starts with a deep dive into your needs and the needs of your users. From this input, Crunchy Owl can dial in and iterate quickly on a solution. Let's not forget to make it strikingly beautiful too.</p>
 
 					<img src="http://www.brianmuenzenmeyer.com/img/owl.png" id="owl">
 

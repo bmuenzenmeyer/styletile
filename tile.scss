@@ -47,12 +47,18 @@ STYLE TILE BASE
 	box-shadow:         0px $one $two rgba(50, 50, 50, 0.55);
 }
 
+html{
+  overflow-y: scroll;
+}
 
 html, body{
 	margin: 0em auto;
 	width: 100%;
 	height: 100%;
-	overflow: hidden;
+}
+
+header{
+  margin-top: .5em;
 }
 
 aside{
@@ -106,11 +112,32 @@ div.tile{
 	height: 100%;
 	h1{
 		text-align: center;
-	  font: bold 48px 'PT Sans Narrow',sans-serif;
-	  text-shadow: 1px 1px 0 #fff, 2px 2px 0 #999;
-	  color: black;
+	  font: normal 72px 'Passion One', sans-serif;
+	  color: $green;
 	}
 }	
+
+.masthead{
+  font: normal 48px 'Passion One', sans-serif;
+  padding: 5px 0;
+  margin: 5px auto;
+  background: rgba(0,0,0,.3);
+  color: $green;
+  a{
+    color: $white;
+    font-family: 'PT Sans Narrow';
+    text-decoration: none;
+    font-size: .5em;
+    line-height: 48px;
+    display: inline-block;
+    vertical-align: middle;
+    &:hover{
+      color: $gray;
+    }
+    i{
+    }
+  }
+}
 
 ul.list{
 	clear: both;
@@ -119,13 +146,10 @@ ul.list{
 	margin-top: 1em;
 	list-style: none;
 	li{
-		border-left: 1em solid $green;
 		background-color: $green-light;
 		margin-bottom: 5px;
-		height: 1.8em;
-		&:hover{
-			border-left: 1em solid $green-dark;
-		}
+    padding-left: .5em;
+		min-height: 1.8em;
 		a{
 			text-decoration: none;
 			display: inline-block;
@@ -137,7 +161,6 @@ ul.list{
 			color: white;
 			background-color: transparentize($gray-dark, .8);
 			padding: 3px 1em;
-			
 		}
 	}
 }
@@ -149,16 +172,16 @@ ul.list{
 }
 
 .meta{
-	float: right;
+	float: left;
 	margin: 0 .5em 0 .5em;
 }
 
 .colors{
 	ul li{
-			height: 90px;
-			width: 90px;
-			margin: .5em auto;
-			line-height: 40px;
+			height: 30px;
+			width: 30px;
+			margin: .25em auto;
+			line-height: 30px;
 		}
 	}
 
@@ -209,6 +232,7 @@ ul.list{
 	position: fixed;
 	bottom: 0;
 	right: 0;
+  z-index: -1;
 }
 
 .corner{
@@ -240,7 +264,7 @@ ul.list{
     align-content: flex-start;
     align-items: flex-start;
   a{
-      flex: 0 1 33%;
+      flex: 0 1 24%;
       align-self: auto;
       text-align: center;
       font-size: 1em;
@@ -269,17 +293,20 @@ ul.list{
   }
  }
 
-.dotted{
-	background-image: -webkit-repeating-radial-gradient(center center, rgba(0,0,0,.2), rgba(0,0,0,.2) 1px, transparent 1px, transparent 100%);
-	background-image: -moz-repeating-radial-gradient(center center, rgba(0,0,0,.2), rgba(0,0,0,.2) 1px, transparent 1px, transparent 100%);
-	background-image: -ms-repeating-radial-gradient(center center, rgba(0,0,0,.2), rgba(0,0,0,.2) 1px, transparent 1px, transparent 100%);
-	background-image: repeating-radial-gradient(center center, rgba(0,0,0,.2), rgba(0,0,0,.2) 1px, transparent 1px, transparent 100%);
-	-webkit-background-size: 3px 3px;
-	-moz-background-size: 3px 3px;
-	background-size: 3px 3px;
-}
+.dotted {
+  padding: 1.5em 0em;
+  background-image: -webkit-repeating-radial-gradient(center center, rgba(0,0,0,.2), rgba(0,0,0,.2) 1px, transparent 1px, transparent 100%);
+  background-image: -moz-repeating-radial-gradient(center center, rgba(0,0,0,.2), rgba(0,0,0,.2) 1px, transparent 1px, transparent 100%);
+  background-image: -ms-repeating-radial-gradient(center center, rgba(0,0,0,.2), rgba(0,0,0,.2) 1px, transparent 1px, transparent 100%);
+  background-image: repeating-radial-gradient(center center, rgba(0,0,0,.2), rgba(0,0,0,.2) 1px, transparent 1px, transparent 100%);
+  -webkit-background-size: .25em .25em;
+  -moz-background-size: .25em .25em;
+  background-size: .05em .05em;
+  letter-spacing: 2px;
+  }
 
 .striped {
+  padding: .25em;
   background-image: -webkit-repeating-linear-gradient(135deg, rgba(0,0,0,.3), rgba(0,0,0,.3) 1px, transparent 2px, transparent 2px, rgba(0,0,0,.3) 3px);
   background-image: -moz-repeating-linear-gradient(135deg, rgba(0,0,0,.3), rgba(0,0,0,.3) 1px, transparent 2px, transparent 2px, rgba(0,0,0,.3) 3px);
   background-image: -o-repeating-linear-gradient(135deg, rgba(0,0,0,.3), rgba(0,0,0,.3) 1px, transparent 2px, transparent 2px, rgba(0,0,0,.3) 3px);
@@ -289,7 +316,17 @@ ul.list{
   background-size: 4px 4px;
   }
 
-  .grid{
+.test{
+  background-image: -webkit-repeating-radial-gradient(center center, rgba(0,0,0,.2), rgba(0,0,0,.2) 1px, transparent 1px, transparent 100%);
+  background-image: -moz-repeating-radial-gradient(center center, rgba(0,0,0,.2), rgba(0,0,0,.2) 1px, transparent 1px, transparent 100%);
+  background-image: -ms-repeating-radial-gradient(center center, rgba(0,0,0,.2), rgba(0,0,0,.2) 1px, transparent 1px, transparent 100%);
+  background-image: repeating-radial-gradient(center center, rgba(0,0,0,.2), rgba(0,0,0,.2) 1px, transparent 1px, transparent 100%);
+  -webkit-background-size: 3px 3px;
+  -moz-background-size: 3px 3px;
+  background-size: 3px 3px;
+  }
+
+.grid{
   background-image: -webkit-repeating-linear-gradient(135deg, rgba(0,0,0,.3), rgba(0,0,0,.3) 1px, transparent 2px, transparent 2px, rgba(0,0,0,.3) 3px);
   background-image: -moz-repeating-linear-gradient(135deg, rgba(0,0,0,.3), rgba(0,0,0,.3) 1px, transparent 2px, transparent 2px, rgba(0,0,0,.3) 3px);
   background-image: -o-repeating-linear-gradient(135deg, rgba(0,0,0,.3), rgba(0,0,0,.3) 1px, transparent 2px, transparent 2px, rgba(0,0,0,.3) 3px);

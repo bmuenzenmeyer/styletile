@@ -95,6 +95,36 @@ header, footer, nav, section, article, hgroup, figure {
   text-align: left;
 }
 
+.dotted {
+  background-image: -webkit-repeating-radial-gradient(center center, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) 1px, transparent 1px, transparent 100%);
+  background-image: -moz-repeating-radial-gradient(center center, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) 1px, transparent 1px, transparent 100%);
+  background-image: -ms-repeating-radial-gradient(center center, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) 1px, transparent 1px, transparent 100%);
+  background-image: repeating-radial-gradient(center center, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) 1px, transparent 1px, transparent 100%);
+  -webkit-background-size: 3px 3px;
+  -moz-background-size: 3px 3px;
+  background-size: 3px 3px;
+}
+
+.striped {
+  background-image: -webkit-repeating-linear-gradient(135deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3) 1px, transparent 2px, transparent 2px, rgba(0, 0, 0, 0.3) 3px);
+  background-image: -moz-repeating-linear-gradient(135deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3) 1px, transparent 2px, transparent 2px, rgba(0, 0, 0, 0.3) 3px);
+  background-image: -o-repeating-linear-gradient(135deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3) 1px, transparent 2px, transparent 2px, rgba(0, 0, 0, 0.3) 3px);
+  background-image: repeating-linear-gradient(135deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3) 1px, transparent 2px, transparent 2px, rgba(0, 0, 0, 0.3) 3px);
+  -webkit-background-size: 4px 4px;
+  -moz-background-size: 4px 4px;
+  background-size: 4px 4px;
+}
+
+.grid {
+  background-image: -webkit-repeating-linear-gradient(135deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3) 1px, transparent 2px, transparent 2px, rgba(0, 0, 0, 0.3) 3px);
+  background-image: -moz-repeating-linear-gradient(135deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3) 1px, transparent 2px, transparent 2px, rgba(0, 0, 0, 0.3) 3px);
+  background-image: -o-repeating-linear-gradient(135deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3) 1px, transparent 2px, transparent 2px, rgba(0, 0, 0, 0.3) 3px);
+  background-image: repeating-linear-gradient(135deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3) 1px, transparent 2px, transparent 2px, rgba(0, 0, 0, 0.3) 3px);
+  -webkit-background-size: 2px 2px;
+  -moz-background-size: 2px 2px;
+  background-size: 2px 2px;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -267,6 +297,39 @@ td {
   transition: all 0.8s ease-in-out;
 }
 
+.feature-block {
+  padding: 1rem;
+  border: 1px solid #b2b2b2;
+}
+
+/* Unordered lists */
+li.post {
+  border-left: 1em solid #B2F33C;
+  background-color: #CEF586;
+  margin-bottom: 5px;
+  height: 1.8em;
+}
+li.post a {
+  text-decoration: none;
+  display: inline-block;
+  padding: 3px;
+  float: left;
+}
+li.post span {
+  float: right;
+  color: white;
+  background-color: rgba(76, 76, 76, 0.2);
+  padding: 3px 1em;
+}
+
+ul.list {
+  clear: both;
+  margin: 0;
+  padding: 0;
+  margin-top: 1em;
+  list-style: none;
+}
+
 .bg-green {
   background-color: #B2F33C;
 }
@@ -306,11 +369,18 @@ td {
 /**************
 STYLE TILE BASE 
 **************/
+html {
+  overflow-y: scroll;
+}
+
 html, body {
   margin: 0em auto;
   width: 100%;
   height: 100%;
-  overflow: hidden;
+}
+
+header {
+  margin-top: .5em;
 }
 
 aside {
@@ -366,9 +436,28 @@ div.tile {
 }
 div.tile h1 {
   text-align: center;
-  font: bold 48px 'PT Sans Narrow',sans-serif;
-  text-shadow: 1px 1px 0 #fff, 2px 2px 0 #999;
-  color: black;
+  font: normal 72px 'Passion One', sans-serif;
+  color: #B2F33C;
+}
+
+.masthead {
+  font: normal 48px 'Passion One', sans-serif;
+  padding: 5px 0;
+  margin: 5px auto;
+  background: rgba(0, 0, 0, 0.3);
+  color: #B2F33C;
+}
+.masthead a {
+  color: #fff;
+  font-family: 'PT Sans Narrow';
+  text-decoration: none;
+  font-size: .5em;
+  line-height: 48px;
+  display: inline-block;
+  vertical-align: middle;
+}
+.masthead a:hover {
+  color: #666;
 }
 
 ul.list {
@@ -379,13 +468,10 @@ ul.list {
   list-style: none;
 }
 ul.list li {
-  border-left: 1em solid #B2F33C;
   background-color: #CEF586;
   margin-bottom: 5px;
-  height: 1.8em;
-}
-ul.list li:hover {
-  border-left: 1em solid #55731D;
+  padding-left: .5em;
+  min-height: 1.8em;
 }
 ul.list li a {
   text-decoration: none;
@@ -406,15 +492,15 @@ ul.list li span {
 }
 
 .meta {
-  float: right;
+  float: left;
   margin: 0 .5em 0 .5em;
 }
 
 .colors ul li {
-  height: 90px;
-  width: 90px;
-  margin: .5em auto;
-  line-height: 40px;
+  height: 30px;
+  width: 30px;
+  margin: .25em auto;
+  line-height: 30px;
 }
 
 .left {
@@ -464,6 +550,7 @@ ul.list li span {
   position: fixed;
   bottom: 0;
   right: 0;
+  z-index: -1;
 }
 
 .corner {
@@ -495,7 +582,7 @@ ul.list li span {
   align-items: flex-start;
 }
 .buttons a {
-  flex: 0 1 33%;
+  flex: 0 1 24%;
   align-self: auto;
   text-align: center;
   font-size: 1em;
@@ -524,16 +611,19 @@ ul.list li span {
 }
 
 .dotted {
+  padding: 1.5em 0em;
   background-image: -webkit-repeating-radial-gradient(center center, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) 1px, transparent 1px, transparent 100%);
   background-image: -moz-repeating-radial-gradient(center center, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) 1px, transparent 1px, transparent 100%);
   background-image: -ms-repeating-radial-gradient(center center, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) 1px, transparent 1px, transparent 100%);
   background-image: repeating-radial-gradient(center center, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) 1px, transparent 1px, transparent 100%);
-  -webkit-background-size: 3px 3px;
-  -moz-background-size: 3px 3px;
-  background-size: 3px 3px;
+  -webkit-background-size: .25em .25em;
+  -moz-background-size: .25em .25em;
+  background-size: .05em .05em;
+  letter-spacing: 2px;
 }
 
 .striped {
+  padding: .25em;
   background-image: -webkit-repeating-linear-gradient(135deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3) 1px, transparent 2px, transparent 2px, rgba(0, 0, 0, 0.3) 3px);
   background-image: -moz-repeating-linear-gradient(135deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3) 1px, transparent 2px, transparent 2px, rgba(0, 0, 0, 0.3) 3px);
   background-image: -o-repeating-linear-gradient(135deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3) 1px, transparent 2px, transparent 2px, rgba(0, 0, 0, 0.3) 3px);
@@ -541,6 +631,16 @@ ul.list li span {
   -webkit-background-size: 4px 4px;
   -moz-background-size: 4px 4px;
   background-size: 4px 4px;
+}
+
+.test {
+  background-image: -webkit-repeating-radial-gradient(center center, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) 1px, transparent 1px, transparent 100%);
+  background-image: -moz-repeating-radial-gradient(center center, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) 1px, transparent 1px, transparent 100%);
+  background-image: -ms-repeating-radial-gradient(center center, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) 1px, transparent 1px, transparent 100%);
+  background-image: repeating-radial-gradient(center center, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) 1px, transparent 1px, transparent 100%);
+  -webkit-background-size: 3px 3px;
+  -moz-background-size: 3px 3px;
+  background-size: 3px 3px;
 }
 
 .grid {
